@@ -4,7 +4,7 @@ data = get_data(__file__)
 
 dnas = data.split('>')[1:]
 
-f = open('data/12_GRPH.txt', 'w')
+f = open('output/12_GRPH.txt', 'w')
 
 for dna in dnas:
     dna = dna.split('\n')

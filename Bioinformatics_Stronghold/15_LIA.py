@@ -1,4 +1,5 @@
-from util import get_data
+### hard
+from util import get_data, factorial
 
 data = get_data(__file__)
 
@@ -13,11 +14,6 @@ def prob(k, n):
         # probability of i number of organisms is not AaBb
         prob -= choose(2**k, i) * ((1/4)**i * (3/4)**(2**k - i))
     return prob
-
-def factorial(n):
-    if n == 0:
-        return 1
-    return n * factorial(n - 1)
 
 def choose(n, k):
     return factorial(n) / (factorial(k) * factorial(n - k))
