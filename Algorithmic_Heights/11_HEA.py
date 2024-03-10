@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -21,5 +21,5 @@ def build_max_heap(numbers):
 heap = build_max_heap(numbers)
 print(heap)
 
-with open('Algorithmic_Heights/output/11_HEA.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     f.write(' '.join(map(str, heap)) + '\n')

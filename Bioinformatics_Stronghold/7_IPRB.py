@@ -1,6 +1,6 @@
 from util import get_data
 
-data = get_data('data/rosalind_iprb.txt')
+data = get_data(__file__)
 
 k, m, n = map(int, data.split())
 

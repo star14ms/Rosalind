@@ -1,6 +1,6 @@
-from util import get_data
+from util import get_data, get_output_path
 
-data = get_data('data/rosalind_gc.txt')
+data = get_data(__file__)
 
 def gc_content(dna):
     return (dna.count('G') + dna.count('C')) / len(dna) * 100
@@ -42,5 +42,5 @@ for line in data:
 
 gc = gc_content(dna)
 
-with open('data/rosalind_gc_output.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     f.write(f'{max_id}\n{max_gc}\n')

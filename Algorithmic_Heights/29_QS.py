@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 numbers = list(map(int, data.split('\n')[1].split(' ')))
@@ -16,5 +16,5 @@ def quicksort(numbers):
       right.append(numbers[i])
   return quicksort(left) + [pivot] + quicksort(right)
 
-with open('Algorithmic_Heights/output/29_QS.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     f.write(' '.join(map(str, quicksort(numbers))) + '\n')

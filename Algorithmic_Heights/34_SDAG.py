@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 # data = '''5 6
@@ -42,5 +42,5 @@ dist = bellman_ford(n, graph, 1)
 answer = ' '.join(map(lambda x: 'x' if x == float('inf') else str(x), dist))
 print(answer)
 
-with open('Algorithmic_Heights/output/34_SDAG.txt', 'w') as output_data:
+with open(get_output_path(__file__), 'w') as output_data:
     output_data.write(answer + '\n')

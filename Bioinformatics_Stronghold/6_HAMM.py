@@ -1,6 +1,6 @@
 from util import get_data
 
-data = get_data('data/rosalind_hamm.txt')
+data = get_data(__file__)
 
 s, t = data.split('\n')
 hamming_distance = 0

@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 # data = '''2
@@ -113,6 +113,6 @@ end = perf_counter()
 print((end - start) // 60, 'minutes', f'{(end - start) % 60:f} seconds')
 
 
-with open('Algorithmic_Heights/output/32_2SAT.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     for result in results:
         f.write(result + '\n')

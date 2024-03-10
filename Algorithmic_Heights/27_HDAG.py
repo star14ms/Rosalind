@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 input_data = get_data(__file__)
 # data ='''2
@@ -90,5 +90,5 @@ while i < len(lines):
 for result in results:
     print(result)
 
-with open('Algorithmic_Heights/output/27_HDAG.txt', 'w') as output_data:
+with open(get_output_path(__file__), 'w') as output_data:
     output_data.write('\n'.join(results) + '\n')

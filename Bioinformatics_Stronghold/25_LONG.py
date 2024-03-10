@@ -1,5 +1,5 @@
 ### hard
-from util import get_data, compare_with_selection
+from util import get_data, get_output_path, compare_with_selection
 
 data = get_data(__file__)
 
@@ -55,5 +55,5 @@ print(i)
 # print(shortest_common_supersequence)
 
 
-# with open('output/25_LONG.txt', 'w') as output_data:
-#   output_data.write(shortest_common_supersequence + '\n')
+with open(get_output_path(__file__), 'w') as output_data:
+  output_data.write(shortest_common_supersequence + '\n')

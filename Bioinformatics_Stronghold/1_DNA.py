@@ -1,4 +1,5 @@
+from util import get_data
 
-with open('data/rosalind_dna.txt', 'r') as f:
-    dna = f.read().strip()
-    print(dna.count('A'), dna.count('C'), dna.count('G'), dna.count('T'))
+dna = get_data(__file__)
+
+print(dna.count('A'), dna.count('C'), dna.count('G'), dna.count('T'))

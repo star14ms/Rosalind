@@ -1,5 +1,5 @@
 ### hard
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -55,7 +55,7 @@ for array, threesum in zip(arrays, threesum_list):
       array.index(threesum[2])+1
     ]))
 
-with open('Algorithmic_Heights/output/14_3SUM.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
   for threesum in threesum_indexs:
     if threesum == -1:
       f.write('-1\n')

@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -19,7 +19,7 @@ for array in arrays:
   two_sum_list.append(two_sum(array))
   
 
-with open('Algorithmic_Heights/output/8_2SUM.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
   for two_sum_indexs in two_sum_list:
     # print(*two_sum_indexs)
     if two_sum_indexs == -1:

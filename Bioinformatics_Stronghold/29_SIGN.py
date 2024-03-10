@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -18,7 +18,7 @@ def get_signed_permutations(n, array=[]):
 
 permutations = get_signed_permutations(n)
 
-with open('output/29_SIGN.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
   f.write(str(len(permutations)) + '\n')
   for permutation in permutations:
     f.write(' '.join(map(str, permutation)) + '\n')

@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -29,5 +29,5 @@ def is_bipartite(graph):
 
 bipartite_list = list(map(is_bipartite, graphs))
 
-with open('Algorithmic_Heights/output/15_BIP.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
   f.write(' '.join(map(str, bipartite_list)))

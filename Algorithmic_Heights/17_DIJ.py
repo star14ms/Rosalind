@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -32,5 +32,5 @@ def get_length_of_lowest_weight_path(start_vertex):
 length_of_shortest_paths = get_length_of_lowest_weight_path(1)
 print(' '.join(map(str, length_of_shortest_paths)))
 
-with open('Algorithmic_Heights/output/17_DIJ.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
   f.write(' '.join(map(str, length_of_shortest_paths)) + '\n')

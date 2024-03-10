@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -24,5 +24,5 @@ index_array = [binary_search(sorted_array, x) for x in random_array]
   
 print(' '.join(map(str, index_array)))
 
-with open('Algorithmic_Heights/output/2_BINS.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     f.write(' '.join(str(binary_search(sorted_array, x)) for x in random_array))

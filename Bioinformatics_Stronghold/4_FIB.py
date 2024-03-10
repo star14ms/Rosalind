@@ -1,6 +1,6 @@
 from util import get_data
 
-data = get_data('data/rosalind_fib.txt')
+data = get_data(__file__)
 
 n, k = map(int, data.split())
 

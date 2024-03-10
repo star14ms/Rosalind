@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -64,6 +64,6 @@ b = longest_decreasing_subsequence(permutation)
 print(*a)
 print(*b)
 
-with open('output/24_LGIS.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     f.write(' '.join(map(str, a)) + '\n')
     f.write(' '.join(map(str, b)) + '\n')

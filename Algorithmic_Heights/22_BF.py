@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -48,5 +48,5 @@ def get_length_of_lowest_weight_path(graphs, n_vertices, start_vertex):
 shortest_lengths = get_length_of_lowest_weight_path(graphs, n_vertices, 1)
 print(' '.join(map(str, shortest_lengths)))
 
-with open('Algorithmic_Heights/output/22_BF.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     f.write(' '.join(map(lambda x: str(x) if x != -1 else 'x', shortest_lengths)))

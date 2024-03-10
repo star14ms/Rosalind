@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 
@@ -13,5 +13,5 @@ def get_permutations(symbols, length):
 
 perms = get_permutations(symbols, int(length))
 
-with open('output/23_LEXF.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
     f.write('\n'.join(perms))

@@ -1,4 +1,4 @@
-from util import get_data
+from util import get_data, get_output_path
 
 data = get_data(__file__)
 numbers = list(map(int, data.split('\n')[1].split()))
@@ -28,5 +28,5 @@ def heap_sort(arr):
   
 print(' '.join(map(str, heap_sort(numbers))))
       
-with open('Algorithmic_Heights/output/18_HS.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
   f.write(' '.join(map(str, heap_sort(numbers))) + '\n')

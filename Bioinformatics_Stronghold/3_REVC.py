@@ -1,6 +1,6 @@
 from util import get_data
 
-data = get_data('data/rosalind_revc.txt')
+data = get_data(__file__)
 
 new_data = ''
 for char in data[::-1]:

@@ -1,5 +1,5 @@
 # error
-from util import get_data
+from util import get_data, get_output_path
 from urllib.request import urlopen as get
 
 data = get_data(__file__)
@@ -29,7 +29,7 @@ for id in fasta_ids:
     print(*location_motif.get(id))
 
 
-with open('output/16_MPRT.txt', 'w') as f:
+with open(get_output_path(__file__), 'w') as f:
   for key, value in location_motif.items():
     f.write(key + '\n')
     f.write(' '.join(map(str, value)) + '\n')

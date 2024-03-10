@@ -1,6 +1,6 @@
 from util import get_data
 
-data = get_data('28_NWC.py')
+data = get_data("28_NWC.py")
 # data = '''2
 
 # 4 5

@@ -1,7 +1,7 @@
 from util import get_data
 from constant import CODON_TABLE
 
-data = get_data('data/rosalind_prot.txt')
+data = get_data(__file__)
 
 protein = ''
 
