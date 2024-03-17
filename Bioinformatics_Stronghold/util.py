@@ -18,9 +18,18 @@ def get_output_path(file_suffix):
 
 
 def factorial(n):
-    if n == 0:
-        return 1
-    return n * factorial(n - 1)
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+
+def factorial_div(n, k):
+    """Calculate n! / k! which simplifies the calculation avoiding large numbers."""
+    result = 1
+    for i in range(k + 1, n + 1):
+        result *= i
+    return result
 
 
 def reverse_complement(rna1):
@@ -88,4 +97,3 @@ def find_orf(protein_strings, pattern):
                 orf = orf.union(find_orf([sub_match[1:]], r'M.*?-'))
 
     return orf
-
