@@ -1,6 +1,8 @@
 from constant import CODON_TABLE
 import re
 import os
+import subprocess
+import Bio.Align.substitution_matrices.data as BioData
 
 
 def get_filepath(file_suffix):
@@ -39,7 +41,7 @@ def factorial_div(n, k):
 
 
 def reverse_complement(rna1):
-    U = 'T' if 'T' in rna1 else 'U'
+    U = 'U' if 'U' in rna1 else 'T'
 
     rna2 = ''
     for char in rna1[::-1]:
@@ -103,3 +105,41 @@ def find_orf(protein_strings, pattern):
                 orf = orf.union(find_orf([sub_match[1:]], r'M.*?-'))
 
     return orf
+
+
+def align_with_emboss(s1, s2, local=False, gapopen=10, gapextend=0.5, endweight=False, endopen=10, endextend=0.5, datafile='BLOSUM62', file_name='Align', verbose=False):
+  command = 'matcher' if local else 'needle'
+
+  for i, record in enumerate([s1, s2]):
+    with open(get_output_path(f'{file_name}{i+1}', 'fasta'), 'w') as f:
+      fasta = record.format("fasta")
+      f.write(fasta)
+      
+  if '/' not in datafile:
+      datafile = f"{BioData.__path__[0]}/{datafile}"
+
+  subprocess.call([
+    command, 
+    "-datafile", datafile, 
+    "-outfile", get_output_path(file_name, ext=command), 
+    "-aformat3", "markx3", # Easy to read alignments
+    "-gapopen", str(gapopen), 
+    "-gapextend", str(gapextend), 
+    "-auto", "false", 
+    # "-alternatives", "30"
+  ] + ([
+    "-endweight", str(endweight),
+    "-endopen", str(endopen),
+    "-endextend", str(endextend),
+  ] if not local else []) + [
+    get_output_path(f'{file_name}1', ext='fasta'), 
+    get_output_path(f'{file_name}2', ext='fasta')
+  ], stderr=subprocess.DEVNULL if not verbose else None)
+
+  with open(get_output_path(file_name, ext=command), 'r') as f:
+    data = f.read()
+    score = data[data.find('Score: ')+7:].split('\n')[0].split('.')[0]
+    substring1 = data.split('> ..')[1].replace('\n', '')
+    substring2 = data.split('> ..')[2].replace('\n', '').split('#')[0]
+
+  return int(score), substring1, substring2

@@ -1,0 +1,11 @@
+10
+>robot
+--
+>dog
+G-
+>rat
+CC
+>mouse
+G-
+>hamster
+-T

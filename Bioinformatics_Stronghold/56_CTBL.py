@@ -2,7 +2,6 @@
 from util import get_data, get_output_path
 from ete3 import Tree
 
-newick = get_data(__file__)
 
 def parse_newick(newick):
     # Parse the Newick string into a tree structure
@@ -43,10 +42,13 @@ def solve_newick_problem(newick):
     splits = find_splits(tree)  # Find unique splits
     # Generate and print the character table
     character_table = create_character_table(splits, all_taxa)
+    
+    return character_table
+
+
+if __name__ == '__main__':
+    newick = get_data(__file__)
+    # newick = "(dog,((elephant,mouse),robot),cat);"
+
+    character_table = solve_newick_problem(newick)
     print_character_table(character_table)
-
-# Sample Dataset
-# newick = "(dog,((elephant,mouse),robot),cat);"
-solve_newick_problem(newick)
-
-
