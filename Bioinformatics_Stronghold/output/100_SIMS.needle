@@ -1,0 +1,45 @@
+########################################
+# Program: needle
+# Rundate: Tue 28 May 2024 21:22:06
+# Commandline: needle
+#    -datafile /Users/minseo/Documents/Github/_Bioinfo/Rosalind/data/substitution_matrices/ONES
+#    -outfile ./Bioinformatics_Stronghold/output/101_SIMS.needle
+#    -aformat3 markx3
+#    -gapopen 1
+#    -gapextend 1
+#    -endweight True
+#    -endopen 1
+#    -endextend 1
+#    [-asequence] ./Bioinformatics_Stronghold/output/101_SIMS1.fasta
+#    [-bsequence] ./Bioinformatics_Stronghold/output/101_SIMS2.fasta
+# Align_format: markx3
+# Report_file: ./Bioinformatics_Stronghold/output/101_SIMS.needle
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: 
+# 2: 
+# Matrix: /Users/minseo/Documents/Github/_Bioinfo/Rosalind/data/substitution_matrices/ONES
+# Gap_penalty: 1.0
+# Extend_penalty: 1.0
+#
+# Length: 98
+# Identity:      19/98 (19.4%)
+# Similarity:    19/98 (19.4%)
+# Gaps:          79/98 (80.6%)
+# Score: -60.0
+# 
+#
+#=======================================
+
+> ..
+GCAAACCATAAGCCCTACGTGCCGCCTGTTTAAACTCGCGAACTGAATCT
+TCTGCTTCACGGTGAAAGTACCACAATGGTATCACACCCCAAGGAAAC
+> ..
+GC---C-----G---T-C-------------A-----G-G--CTG-----
+---G-T-----GT-------CC-----G--------------------
+
+#---------------------------------------
+#---------------------------------------

@@ -1,0 +1,47 @@
+########################################
+# Program: needle
+# Rundate: Mon 27 May 2024 16:51:01
+# Commandline: needle
+#    -datafile /Users/minseo/Documents/Github/_Bioinfo/Rosalind/data/substitution_matrices/TRANS
+#    -outfile ./Bioinformatics_Stronghold/output/99_OAP.needle
+#    -aformat3 markx3
+#    -gapopen 2
+#    -gapextend 2
+#    -endweight True
+#    -endopen 2
+#    -endextend 2
+#    [-asequence] ./Bioinformatics_Stronghold/output/99_OAP1.fasta
+#    [-bsequence] ./Bioinformatics_Stronghold/output/99_OAP2.fasta
+# Align_format: markx3
+# Report_file: ./Bioinformatics_Stronghold/output/99_OAP.needle
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: 
+# 2: 
+# Matrix: /Users/minseo/Documents/Github/_Bioinfo/Rosalind/data/substitution_matrices/TRANS
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 102
+# Identity:      52/102 (51.0%)
+# Similarity:    52/102 (51.0%)
+# Gaps:          34/102 (33.3%)
+# Score: -48.0
+# 
+#
+#=======================================
+
+> ..
+-A--A-G---CT-AC-C------GATAGC-TGATGACT--CT-AACTCTA
+TTTATGCGTAGTGGCATACAGTTACT-CG-TAG--CGCGT--ATATCTA-
+--
+> ..
+GATGATGTAAGTAACTCTTTCTAGATATCACGAT-ACTACCTGAAGACT-
+TTCCCGAGTAG-GGC-T-CCTTTTCTCCGCCAGTTTG-GTTGTTATCAAC
+AT
+
+#---------------------------------------
+#---------------------------------------
