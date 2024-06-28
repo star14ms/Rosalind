@@ -14,12 +14,13 @@ def get_difference_mutiset(query_set):
     return multiset
 
 
-def find_query_set(multiset, query_set=[]):
-    global multiset_origin
+def find_query_set(multiset, query_set=[], multiset_origin=None):
+    if multiset_origin is None:
+        multiset_origin = multiset.copy()
     find_query_set.cache += 1
 
     if query_set == []:
-        return find_query_set(multiset[:-1], [0, multiset[-1]])
+        return find_query_set(multiset[:-1], [0, multiset[-1]], multiset_origin)
     elif len(query_set) * (len(query_set) - 1) / 2 == len(multiset_origin):
         if sorted(list(get_difference_mutiset(query_set))) == multiset_origin:
             return query_set
@@ -39,7 +40,7 @@ def find_query_set(multiset, query_set=[]):
     if possible_distance_from_first:
         new_query_set = query_set.copy()
         new_query_set.append(multiset[-1])
-        result = find_query_set(multiset[:-1], sorted(new_query_set))
+        result = find_query_set(multiset[:-1], sorted(new_query_set), multiset_origin)
         if result:
             return result
 
@@ -51,7 +52,7 @@ def find_query_set(multiset, query_set=[]):
         if result:
             return result
 
-    result = find_query_set(multiset[:-1], query_set)
+    result = find_query_set(multiset[:-1], query_set, multiset_origin)
     if result:
         return result
     return False
@@ -63,7 +64,6 @@ if __name__ == '__main__':
     # data = '''1 2 3 3 4 5 5 7 9 9 6 12 10 14 15'''
 
     multiset = sorted(list(map(int, data.split())))
-    multiset_origin = multiset.copy()
 
     find_query_set.cache = 0
 

@@ -87,7 +87,7 @@ def rna_to_protein_strings(rna, shifts=True, include_reverse_complement=True, ve
             if len(reading_frames) > 0:
                 seqs.append(reading_frames)
 
-    return seqs
+    return seqs if shifts or include_reverse_complement else seqs[0]
 
 
 def find_orf(protein_strings, pattern):
