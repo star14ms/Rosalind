@@ -1,14 +1,12 @@
 from util import get_data
 
+from _74_SUFF import get_suffix_tree, print_substrings_of_suffix_tree
+
 
 dna = get_data(__file__)
 # dna = '''ATTTGGATT'''
 # dna = '''AAAAAAAAA'''
 
-
-# SUFF = __import__('75_SUFF')
-# get_suffix_tree = SUFF.get_suffix_tree
-# print_substrings_of_suffix_tree = SUFF.print_substrings_of_suffix_tree
 
 # suffix_tree = get_suffix_tree(dna)
 # print_substrings_of_suffix_tree(suffix_tree)

@@ -17,9 +17,9 @@ def catalan(n):
     return 1
   return sum([catalan(i) * catalan(n - i) for i in range(1, n)]) # if print(i, n-i) or True
 
-# catalan_numbers = []
-# for i in range(1, len(rna)):
-#   catalan_numbers.append(catalan(i))
+catalan_numbers = []
+for i in range(1, len(rna)):
+  catalan_numbers.append(catalan(i))
 
 # AU_count = catalan(rna.count('A') + 1)
 # GC_count = catalan(rna.count('G') + 1)

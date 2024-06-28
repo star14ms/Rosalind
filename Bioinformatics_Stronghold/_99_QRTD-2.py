@@ -2,8 +2,8 @@ from util import get_data
 import numpy as np
 from math import comb
 
-solve_newick_problem = __import__('56_CTBL').solve_newick_problem
-get_quartets = __import__('73_QRT').get_quartets
+from _56_CTBL import solve_newick_problem
+from _72_QRT import get_quartets
 
 
 if __name__ == '__main__':

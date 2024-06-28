@@ -4,8 +4,7 @@ from math import comb
 from Bio import Phylo
 from io import StringIO
 
-
-solve_newick_problem = __import__('56_CTBL').solve_newick_problem
+from _56_CTBL import solve_newick_problem
 
 
 def get_n_common_quartets(tree1, tree2):

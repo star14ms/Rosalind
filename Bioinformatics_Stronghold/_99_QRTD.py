@@ -5,8 +5,7 @@ from io import StringIO
 from functools import lru_cache
 from tqdm import tqdm
 
-
-solve_newick_problem = __import__('56_CTBL').solve_newick_problem
+from _56_CTBL import solve_newick_problem
 
 
 @lru_cache(maxsize=None)

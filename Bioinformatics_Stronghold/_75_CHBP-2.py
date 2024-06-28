@@ -4,6 +4,9 @@ from scipy.cluster.hierarchy import average, to_tree
 from scipy.spatial.distance import pdist, squareform
 from util import get_data, get_output_path
 
+from _56_CTBL import solve_newick_problem
+
+
 data = get_data(__file__)
 
 # data = '''cat dog elephant mouse rabbit rat
@@ -49,5 +52,4 @@ print(newick_tree)
 with open(get_output_path(__file__), 'w') as f:
   f.write(newick_tree + '\n')
 
-CTBL = __import__('56_CTBL')
-CTBL.solve_newick_problem(newick_tree)
+solve_newick_problem(newick_tree)

@@ -2,8 +2,7 @@ from util import get_data, get_output_path
 from Bio.Align.Applications import ClustalwCommandline
 import os
 
-# SUFF = __import__('75_SUFF')
-# get_suffix_tree = SUFF.get_suffix_tree
+from _74_SUFF import get_suffix_tree
 
 
 if __name__ == '__main__':

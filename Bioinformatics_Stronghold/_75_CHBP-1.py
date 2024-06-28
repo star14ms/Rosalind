@@ -1,6 +1,9 @@
 from util import get_data, get_output_path
 import numpy as np
 
+from _56_CTBL import solve_newick_problem
+
+
 data = get_data(__file__)
 # data = '''
 # cat dog elephant mouse rabbit rat
@@ -90,8 +93,7 @@ while queue and character_table.shape[1] > 0:
 newick_str += ';'
 print(newick_str)
 
-CTBL = __import__('56_CTBL')
-CTBL.solve_newick_problem(newick_str)
+solve_newick_problem(newick_str)
 
 with open(get_output_path(__file__), 'w') as f:
   f.write(newick_str + '\n')
